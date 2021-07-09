@@ -59,15 +59,10 @@ textarea {
     <br>
     <button type="button" class="button" onclick="javascript:check();">&#x68C0;&#x67E5;</button>
   </div>
-</div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script>
 // Try edit message
 function check(){let msg=$("#msg").val();//console.log("check clicked:" + msg);
 const name_base=['刘晗月','李如心','石米家','孙东雅','苏桐茼','于铂城','朱书漫','刘昱','胡昌慧','龚子涵','姚梦溪','周书琪','周怡雯','高若岚','肖彭文','陈雨泽','王珏','李承泽','苗笑睿','郭旭珩','史旭鹏','石笑千','姬政宇'];// remove white space from msg
 msg=msg.replace(/\s/g,"");console.log(msg);let missed=[];let repeated=[];name_base.forEach(v=>{let re=new RegExp(v,"g");let count=(msg.match(re)||[]).length;console.log("check:"+v+":"+count);if(count==0){missed.push('@'+v);}else if(count>1){repeated.push('@'+v);}});if(missed.length>0||repeated.length>0){let err='';if(missed.length>0){err+="以下学生未打卡："+missed.join(',');}if(repeated.length>0){err+="\n以下学生重复打卡："+repeated.join(',');}//xxx
 $("#msg").val(err);$("#msg").select();document.execCommand('copy');alert(err);// set err msg to input
-}else{alert("全部完成打卡");}}
-  </script>
-  </body>
-</html>
+}else{alert("全部完成打卡");}}</script></body></html>
