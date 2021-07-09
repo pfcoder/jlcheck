@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>1班接龙检查</title>
+  <meta name="description" content>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background: white;
+  color: #323232;
+  font-weight: 300;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Helvetica neue, roboto;
+}
+
+img {
+  width: 56px;
+  height: 48px;
+}
+
+h1 {
+  font-weight: 200;
+  font-style: 26px;
+  margin: 10px;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  height:150px;
+}</style></head>
+<body><div>  
+  <h1>&#x7C98;&#x8D34;&#x63A5;&#x9F99;&#x5185;&#x5BB9;&#x81F3;&#x6B64;&#xFF1A;</h1>
+  <div>
+    <textarea id="msg" autofocus="true" type="text" width="70%"></textarea>
+  </div>
+  <div>
+    <br>
+    <button type="button" class="button" onclick="javascript:check();">&#x68C0;&#x67E5;</button>
+  </div>
+</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script>
+// Try edit message
+function check(){let msg=$("#msg").val();//console.log("check clicked:" + msg);
+const name_base=['刘晗月','李如心','石米家','孙东雅','苏桐茼','于铂城','朱书漫','刘昱','胡昌慧','龚子涵','姚梦溪','周书琪','周怡雯','高若岚','肖彭文','陈雨泽','王珏','李承泽','苗笑睿','郭旭珩','史旭鹏','石笑千','姬政宇'];// remove white space from msg
+msg=msg.replace(/\s/g,"");console.log(msg);let missed=[];let repeated=[];name_base.forEach(v=>{let re=new RegExp(v,"g");let count=(msg.match(re)||[]).length;console.log("check:"+v+":"+count);if(count==0){missed.push('@'+v);}else if(count>1){repeated.push('@'+v);}});if(missed.length>0||repeated.length>0){let err='';if(missed.length>0){err+="以下学生未打卡："+missed.join(',');}if(repeated.length>0){err+="\n以下学生重复打卡："+repeated.join(',');}//xxx
+$("#msg").val(err);$("#msg").select();document.execCommand('copy');alert(err);// set err msg to input
+}else{alert("全部完成打卡");}}</script></body></html>
