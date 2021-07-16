@@ -62,7 +62,7 @@ textarea {
 </div><script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script><script>
 // Try edit message
 function check(){let msg=$("#msg").val();//console.log("check clicked:" + msg);
-const name_base=['刘晗月','李如心','石米家','孙东雅','苏桐茼','于铂城','朱书漫','刘昱','胡昌慧','龚子涵','姚梦溪','周书琪','周怡雯','高若岚','肖彭文','陈雨泽','王珏','李承泽','苗笑睿','郭旭珩','史旭鹏','石笑千','姬政宇'];// remove white space from msg
+const name_base=['王高仰','夏新明','张博轩','李勉之','胡宇轩','陶雨泽','王登祺','孙晨浩','王骏希','肖涵博','黄斯拓','杜伯钦','汪宁恒','张嘉硕','李正阳','王潇','刘润东','王嘉昊','张博鑫','孔艺霏','马昕源','张博约','孟里','黄楚涵','杨梓翊','金小然','廖梓淇','王子妍','李若溪','李菲泽诺','王悠然','周梓慕','张思涵','苏荣藩','温芷馨','乐梓曦','张嘉欣','孙歌阳'];// remove white space from msg
 msg=msg.replace(/\s/g,"");console.log(msg);let missed=[];let repeated=[];name_base.forEach(v=>{let re=new RegExp(v,"g");let count=(msg.match(re)||[]).length;console.log("check:"+v+":"+count);if(count==0){missed.push('@'+v);}else if(count>1){repeated.push('@'+v);}});if(missed.length>0||repeated.length>0){let err='';if(missed.length>0){err+="以下学生未打卡："+missed.join(',');}if(repeated.length>0){err+="\n以下学生重复打卡："+repeated.join(',');}//xxx
 $("#msg").val(err);$("#msg").select();document.execCommand('copy');alert(err);// set err msg to input
 }else{alert("全部完成打卡");}}</script></body></html>
